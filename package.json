@@ -29,6 +29,7 @@
     "pack:linux:deb:armv7l": "node build-config/build-pack.js target=linux arch=armv7l type=deb",
     "pack:linux:rpm": "node build-config/build-pack.js target=linux arch=x64 type=rpm",
     "pack:linux:pacman": "node build-config/build-pack.js target=linux arch=x64 type=pacman",
+    "pack:linux:flatpak": "node build-config/build-pack.js target=linux arch=x64 type=flatpak",
     "pack:mac": "node build-config/pack.js && npm run pack:mac:dmg && npm run pack:mac:dmg:arm64",
     "pack:mac:dmg": "node build-config/build-pack.js target=mac arch=x64 type=dmg",
     "pack:mac:dmg:arm64": "node build-config/build-pack.js target=mac arch=arm64 type=dmg",

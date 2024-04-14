@@ -93,6 +93,10 @@ const linuxOptions = {
     license: './licenses/license_zh.txt',
     category: 'Utility;AudioVideo;Audio;Player;Music;',
   },
+  flatpak: {
+    baseVersion: '22.08',
+    runtimeVersion: '23.08',
+  },
 }
 /**
  * @type {import('electron-builder').Configuration}
@@ -230,6 +234,12 @@ const createTarget = {
         linuxOptions.artifactName = `\${productName}-\${version}.${arch}.\${ext}`
         return {
           buildOptions: { linux: ['rpm'] },
+          options: linuxOptions,
+        }
+      case 'flatpak':
+        linuxOptions.artifactName = `\${productName}-\${version}.${arch}.\${ext}`
+        return {
+          buildOptions: { linux: ['flatpak'] },
           options: linuxOptions,
         }
       default: throw new Error('Unknown package type: ' + packageType)
